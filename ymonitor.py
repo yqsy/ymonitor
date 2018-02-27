@@ -1,11 +1,8 @@
-from flask import Flask, request, jsonify, make_response
+from flask import Flask, request, jsonify, make_response, render_template
 
 import psutil
 
 app = Flask(__name__)
-
-
-# app.config['JSON_SORT_KEYS'] = False
 
 
 def cpu_stat():
@@ -79,7 +76,7 @@ def connections_stat():
 
     for con in connections:
         one_stat = {}
-        #one_stat['fd'] = con.fd
+        # one_stat['fd'] = con.fd
         one_stat['type'] = str(con.type)
         one_stat['status'] = con.status
 
@@ -98,35 +95,38 @@ def connections_stat():
     return stat
 
 
-@app.route('/api/cpu', methods=['GET'])
+@app.route('/api/cpu')
 def get_cpu_stat():
     stat = cpu_stat()
     return jsonify({'stat': stat})
 
 
-@app.route('/api/mem', methods=['GET'])
+@app.route('/api/mem')
 def get_mem_stat():
     stat = mem_stat()
     return jsonify({'stat': stat})
 
 
-@app.route('/api/diskio', methods=['GET'])
+@app.route('/api/diskio')
 def get_diskio_stat():
     stat = diskio_stat()
     return jsonify({'stat': stat})
 
 
-@app.route('/api/netio', methods=['GET'])
+@app.route('/api/netio')
 def get_netio_stat():
     stat = netio_stat()
     return jsonify({'stat': stat})
 
 
-@app.route('/api/connections', methods=['GET'])
+@app.route('/api/connections')
 def get_connections_stat():
     stat = connections_stat()
     return jsonify({'stat': stat})
 
+@app.route('/')
+def index():
+    return make_response(open('templates/index.html').read())
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

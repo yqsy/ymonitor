@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="ymonitorApp">
+
+<head>
+    <meta charset="utf-8">
+    <script src="/static/js/lib/angular.min.js"></script>
+
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/service/stats.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/css/mycss.css">
+    <script src="/static/css/mycss.js"></script>
+</head>
+
+
+<body>
+
+<div class="jumbotron text-center">
+    <h1>ymonitor</h1>
+</div>
+
+
+<div class="container">
+    <div ng-app="ymonitorApp" ng-controller="cpu">
+        <div class="row">
+            <div class="col-sm-5">
+                <h3>CPU</h3>
+                <div id="myPorgress">
+                    <div id="myBar"
+                         style="width: {{ barwidth }}%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-5">
+            <h3>MEM</h3>
+            <div id="myPorgress">
+                <div id="myBar"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-5">
+            <h3>DISK</h3>
+            <div id="myPorgress">
+                <div id="myBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-5">
+            <h3>NET</h3>
+            <div id="myPorgress">
+                <div id="myBar"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

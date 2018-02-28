@@ -1,12 +1,52 @@
+body {
 
-#myPorgress {
-    width: 100%;
-    background-color: #dddddd;
+
+
 }
 
-#myBar {
+
+.table {
+    display: table;
+    width: 100%;
+    max-width:100%;
+}
+
+.table-row {
+    display: table-row;
+}
+
+.table-cell {
+    display: table-cell;
+    text-align: right;
+}
+
+.myPorgress {
+    margin-bottom: 0px;
+    min-width: 100px;
+    background-color: #dddddd;
+    height: 12px;
+    border-radius: 0px;
+    text-align: right;
+}
+
+.myBar {
     width: 1%;
     height: 30px;
     background-color: #4CAF50;
 }
 
+.progress-bar-ok {
+    background-color: #3E7B04;
+}
+
+.progress-bar-careful {
+    background-color: #295183;
+}
+
+.progress-bar-warning {
+    background-color: #5d4062;
+}
+
+.progress-bar-critical {
+    background: #A30000;
+}

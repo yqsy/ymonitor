@@ -8,15 +8,18 @@ app = Flask(__name__)
 def cpu_stat():
     stat = {}
 
-    cpu = psutil.cpu_times()
-    stat['user'] = cpu.user
-    stat['system'] = cpu.system
-    stat['idle'] = cpu.idle
+    # cpu = psutil.cpu_times()
+    # stat['user'] = cpu.user
+    # stat['system'] = cpu.system
+    # stat['idle'] = cpu.idle
+    #
+    # stat['iowait'] = cpu.iowait
+    #
+    # stat['irq'] = cpu.irq
+    # stat['softirq'] = cpu.softirq
 
-    stat['iowait'] = cpu.iowait
-
-    stat['irq'] = cpu.irq
-    stat['softirq'] = cpu.softirq
+    cpu = psutil.cpu_percent(interval=0.0)
+    stat['used_percent'] = cpu
 
     return stat
 
@@ -123,6 +126,9 @@ def get_netio_stat():
 def get_connections_stat():
     stat = connections_stat()
     return jsonify({'stat': stat})
+
+
+
 
 @app.route('/')
 def index():

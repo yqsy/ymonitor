@@ -24,49 +24,87 @@
 </div>
 
 
-<div class="container">
-    <div ng-app="ymonitorApp" ng-controller="cpu">
-        <div class="row">
-            <div class="col-sm-5">
-                <h3>CPU</h3>
-                <div id="myPorgress">
-                    <div id="myBar"
-                         style="width: {{ barwidth }}%;">
-                    </div>
+<div class="table">
+    <div class="table-row" ng-controller="cpu">
+        <div class="table-cell text-left">CPU</div>
+        <div class="table-cell">
+            <div class="myPorgress">
+                <div class="progress-bar progress-bar-ok" role="progressbar"
+                     aria-valuenow="{{ barwidth }}" aria-valuemin="0" aria-valuemax="100"
+                     style="width: {{ barwidth }}%;height: 12px;">
+                    &nbsp;
                 </div>
             </div>
         </div>
+        <div class="table-cell">
+            {{ barwidth }}%
+        </div>
     </div>
 
-    <div class="row">
-        <div class="col-sm-5">
-            <h3>MEM</h3>
-            <div id="myPorgress">
-                <div id="myBar"></div>
+    <div class="table-row" ng-controller="mem">
+        <div class="table-cell text-left">MEM</div>
+        <div class="table-cell">
+            <div class="myPorgress">
+                <div class="progress-bar progress-bar-ok" role="progressbar"
+                     aria-valuenow="{{ barwidth }}" aria-valuemin="0" aria-valuemax="100"
+                     style="width: {{ barwidth }}%;height: 12px;">
+                    &nbsp;
+                </div>
             </div>
+        </div>
+        <div class="table-cell">
+            {{ barwidth }}%
         </div>
     </div>
 
 
-    <div class="row">
-        <div class="col-sm-5">
-            <h3>DISK</h3>
-            <div id="myPorgress">
-                <div id="myBar"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-
-        <div class="col-sm-5">
-            <h3>NET</h3>
-            <div id="myPorgress">
-                <div id="myBar"></div>
-            </div>
-        </div>
-    </div>
 </div>
+
+<!--<div class="container">-->
+<!--<div ng-app="ymonitorApp" ng-controller="cpu">-->
+<!--<div class="row">-->
+<!--<div class="col-sm-5">-->
+<!--<h3>CPU</h3>-->
+<!--<div id="myPorgress">-->
+<!--<div class="progress-bar progress-bar-ok" role="progressbar"-->
+<!--aria-valuenow="{{ barwidth }}" aria-valuemin="0" aria-valuemax="100"-->
+<!--style="width: {{ barwidth }}%;height: 30px;">-->
+<!--&nbsp;-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="row">-->
+<!--<div class="col-sm-5">-->
+<!--<h3>MEM</h3>-->
+<!--<div id="myPorgress">-->
+<!--<div id="myBar"></div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<!--<div class="row">-->
+<!--<div class="col-sm-5">-->
+<!--<h3>DISK</h3>-->
+<!--<div id="myPorgress">-->
+<!--<div id="myBar"></div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="row">-->
+
+<!--<div class="col-sm-5">-->
+<!--<h3>NET</h3>-->
+<!--<div id="myPorgress">-->
+<!--<div id="myBar"></div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 
 </body>
 
